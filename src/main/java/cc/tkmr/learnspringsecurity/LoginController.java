@@ -37,7 +37,11 @@ public class LoginController {
             Authentication authenticationResponse =
                     this.authenticationManager.authenticate(authenticationRequest);
             SecurityContextHolder.getContext().setAuthentication(authenticationResponse);
-            return ResponseEntity.ok().build();
+            if (SecurityContextHolder.getContext().getAuthentication().isAuthenticated()) {
+                return ResponseEntity.ok().build();
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            }
         } catch (AuthenticationException e) {
             // Handle the authentication exception appropriately
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();

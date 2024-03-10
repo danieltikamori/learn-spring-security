@@ -47,7 +47,7 @@ public class WebSecurityConfig {
     public UserDetailsService userDetailsService() {
         UserDetails user = User
                 .withUsername("user")
-                .password("{noop}password") // {noop} cryptography strategy. {} means no encoding
+                .password("{noop}password") // {noop} cryptography strategy, means no encoding. Use ONLY for demo / test purposes!
                 .authorities("USERS")
                 .build();
         UserDetails admin = User
