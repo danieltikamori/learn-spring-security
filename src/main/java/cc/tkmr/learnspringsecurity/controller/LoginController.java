@@ -1,4 +1,4 @@
-package cc.tkmr.learnspringsecurity;
+package cc.tkmr.learnspringsecurity.controller;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
